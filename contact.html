@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Contact us today for direct assistance with your document needs. Call us, send a WhatsApp message, or email. We are here to help you quickly and efficiently.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Online Services</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background-color: #f7fafc;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a365d;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* Navigation */
+        #main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        #main-nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        #main-nav a:hover,
+        #main-nav a.active {
+            color: white;
+        }
+
+        #main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #2b6cb0;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 4rem 0;
+        }
+
+        /* Contact Hero Section */
+        .contact-hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .contact-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Contact Content */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Contact Info */
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1a365d;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .contact-info h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #2b6cb0, #3182ce);
+            border-radius: 2px;
+        }
+
+        .contact-details {
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2b6cb0, #3182ce);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a365d;
+        }
+
+        .contact-text p {
+            color: #718096;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-link {
+            color: #2b6cb0;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #1a365d;
+            transform: translateX(5px);
+        }
+
+        .contact-link i {
+            margin-left: 5px;
+        }
+
+        /* Quick Links */
+        .quick-links {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .quick-links h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #1a365d;
+        }
+
+        .link-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #2d3748;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .link-button:hover {
+            background: #2b6cb0;
+            color: white;
+            border-color: #2b6cb0;
+            transform: translateY(-3px);
+        }
+
+        .link-button i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Form */
+        .contact-form-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1a365d;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .contact-form-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #2b6cb0, #3182ce);
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #4a5568;
+        }
+
+        .form-group label .required {
+            color: #e53e3e;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #2b6cb0;
+            box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: #a0aec0;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .select-wrapper {
+            position: relative;
+        }
+
+        .select-wrapper::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #718096;
+            pointer-events: none;
+        }
+
+        select.form-control {
+            appearance: none;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        /* File Upload */
+        .file-upload {
+            position: relative;
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .file-upload-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1rem;
+            background: #f7fafc;
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            color: #718096;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload-label:hover {
+            background: #edf2f7;
+            border-color: #2b6cb0;
+        }
+
+        .file-upload-label i {
+            margin-right: 8px;
+        }
+
+        .file-name {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #4a5568;
+            display: none;
+        }
+
+        .file-name.show {
+            display: block;
+        }
+
+        /* Checkbox */
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+            margin-top: 5px;
+            width: 18px;
+            height: 18px;
+            accent-color: #2b6cb0;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            color: #4a5568;
+            cursor: pointer;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #2b6cb0, #3182ce);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #1a365d, #2b6cb0);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(43, 108, 176, 0.3);
+        }
+
+        .submit-btn:disabled {
+            background: #cbd5e0;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .submit-btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-text {
+            position: absolute;
+            right: 70px;
+            background: #25D366;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Hours & Location */
+        .hours-location {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .hours, .location {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hours h3, .location h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #1a365d;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hours h3 i, .location h3 i {
+            color: #2b6cb0;
+        }
+
+        .hours ul {
+            list-style: none;
+        }
+
+        .hours li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .hours li:last-child {
+            border-bottom: none;
+        }
+
+        .hours .day {
+            font-weight: 500;
+            color: #4a5568;
+        }
+
+        .hours .time {
+            color: #718096;
+        }
+
+        .location p {
+            margin-bottom: 1rem;
+            color: #4a5568;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .location i {
+            color: #2b6cb0;
+            margin-top: 3px;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: linear-gradient(135deg, #38a169, #48bb78);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 2rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-message h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-message p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .success-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .success-btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn {
+            background: white;
+            color: #25D366;
+            border: 2px solid white;
+        }
+
+        .whatsapp-btn:hover {
+            background: transparent;
+            color: white;
+        }
+
+        .close-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .close-btn:hover {
+            background: white;
+            color: #38a169;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a365d;
+            color: #e2e8f0;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .footer-logo p {
+            opacity: 0.8;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #2b6cb0;
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contact i {
+            color: #2b6cb0;
+            width: 20px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #a0aec0;
+        }
+
+        .developer {
+            color: #2b6cb0;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            #main-nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: #1a365d;
+                padding: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                visibility: hidden;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            }
+            
+            #main-nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            #main-nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            #main-nav li {
+                width: 100%;
+            }
+            
+            #main-nav a {
+                display: block;
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .link-buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .success-buttons {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-hero p {
+                font-size: 1rem;
+            }
+            
+            .contact-info h2,
+            .contact-form-container h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-form-container {
+                padding: 2rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .whatsapp-text {
+                display: none;
+            }
+            
+            .link-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-hero {
+                padding: 3rem 0;
+            }
+            
+            .contact-form-container {
+                padding: 1.5rem;
+            }
+            
+            .hours-location {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Online Services</h1>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Navigation -->
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Contact Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Contact Mr.Legobert</h1>
+                <p>Get in touch with us for professional document processing services. We're here to help you with all your service needs.</p>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <div class="container">
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    
+                    <div class="contact-details">
+                        <!-- WhatsApp Contact -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>WhatsApp Direct</h3>
+                                <p>Chat with us instantly on WhatsApp</p>
+                                <a href="https://wa.me/255695695952?text=Habari%20Legobert,%20Nina%20hitaji%20huduma%20yako" 
+                                   class="contact-link" target="_blank">
+                                    +255 695 695 952 <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Email Contact -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email Address</h3>
+                                <p>Send us an email for detailed inquiries</p>
+                                <a href="mailto:ligobertkishiwa003@gmail.com?subject=Service%20Request%20from%20Website&body=Habari%20Legobert,%20Nina%20hitaji%20huduma%20yako" 
+                                   class="contact-link">
+                                    ligobertkishiwa003@gmail.com <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Phone Contact -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Phone Call</h3>
+                                <p>Call us for immediate assistance</p>
+                                <a href="tel:+255695695952" class="contact-link">
+                                    +255 695 695 952 <i class="fas fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Service Hours -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Service Hours</h3>
+                                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                                <p>Saturday: 9:00 AM - 4:00 PM</p>
+                                <p>Sunday: 10:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="quick-links">
+                        <h3>Quick Actions</h3>
+                        <div class="link-buttons">
+                            <a href="https://wa.me/255695695952?text=Habari%20Legobert,%20Nina%20hitaji%20huduma%20yako" 
+                               class="link-button" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp Now
+                            </a>
+                            <a href="mailto:ligobertkishiwa003@gmail.com?subject=Service%20Request" 
+                               class="link-button">
+                                <i class="fas fa-envelope"></i> Email Now
+                            </a>
+                            <a href="tel:+255695695952" class="link-button">
+                                <i class="fas fa-phone"></i> Call Now
+                            </a>
+                            <a href="services.html" class="link-button">
+                                <i class="fas fa-list"></i> View Services
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Request Service</h2>
+                    <form id="serviceRequestForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phoneNumber" class="form-control" placeholder="07XX XXX XXX" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceType">Service Needed <span class="required">*</span></label>
+                            <div class="select-wrapper">
+                                <select id="serviceType" class="form-control" required>
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="RITA Services">RITA Services (Birth/Death/Marriage Certificates)</option>
+                                    <option value="TCU Verification">TCU Verification (University Certificates)</option>
+                                    <option value="NACTE Verification">NACTE Verification (Technical Education)</option>
+                                    <option value="HESLB Loans">HESLB Loans (Student Loans)</option>
+                                    <option value="ZHESLB Loans">ZHESLB Loans (Zanzibar Student Loans)</option>
+                                    <option value="BRELA Registration">BRELA Registration (Business Registration)</option>
+                                    <option value="TRA TIN Services">TRA TIN Services (Tax Registration)</option>
+                                    <option value="NHIF Services">NHIF Services (Health Insurance)</option>
+                                    <option value="AJIRA Portal">AJIRA Portal Services (Job Applications)</option>
+                                    <option value="CV Writing">CV Writing Services</option>
+                                    <option value="Professional Letters">Professional Letters</option>
+                                    <option value="Email Services">Email Services</option>
+                                    <option value="Police Loss Report">Police Loss Report</option>
+                                    <option value="TANEPS Services">TANEPS Services (Government Tenders)</option>
+                                    <option value="Computer Services">Computer Supply & Services</option>
+                                    <option value="Other Services">Other Professional Services</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="uploadFile">Upload Documents (Optional)</label>
+                            <div class="file-upload">
+                                <input type="file" id="uploadFile" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+                                <div class="file-upload-label">
+                                    <i class="fas fa-cloud-upload-alt"></i> Click to upload files
+                                </div>
+                            </div>
+                            <div id="fileName" class="file-name"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Describe Your Needs <span class="required">*</span></label>
+                            <textarea id="message" class="form-control" placeholder="Please describe in detail what service you need, any specific requirements, and any questions you may have..." required></textarea>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="confirmSend" required>
+                            <label for="confirmSend">I confirm that I want to send this message and I understand that it will be sent to Legobert via WhatsApp.</label>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                        </button>
+
+                        <!-- Success Message -->
+                        <div id="successMessage" class="success-message">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Message Ready to Send!</h3>
+                            <p>Your service request has been prepared. Click the button below to send it directly to Legobert on WhatsApp.</p>
+                            <div class="success-buttons">
+                                <a href="#" id="whatsappLink" class="success-btn whatsapp-btn" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Open WhatsApp
+                                </a>
+                                <button type="button" id="closeSuccess" class="success-btn close-btn">
+                                    <i class="fas fa-times"></i> Close
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Hours & Location -->
+            <div class="hours-location">
+                <div class="hours">
+                    <h3><i class="fas fa-business-time"></i> Working Hours</h3>
+                    <ul>
+                        <li>
+                            <span class="day">Monday - Friday</span>
+                            <span class="time">8:00 AM - 12:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="day">Saturday</span>
+                            <span class="time">9:00 AM - 12:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="day">Sunday</span>
+                            <span class="time">10:00 AM - 10:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="day">Emergency Services</span>
+                            <span class="time">24/7 via WhatsApp</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="location">
+                    <h3><i class="fas fa-map-marker-alt"></i> Service Information</h3>
+                    <p><i class="fas fa-user"></i> <strong>Service Provider:</strong> Legobert - Professional Document Specialist</p>
+                    <p><i class="fas fa-certificate"></i> <strong>Experience:</strong> 5+ Years in Document Processing</p>
+                    <p><i class="fas fa-shield-alt"></i> <strong>Specialization:</strong> Government Documents, Business Registration, Student Services</p>
+                    <p><i class="fas fa-clock"></i> <strong>Response Time:</strong> Typically within 5 minutes during working hours</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/255695695952?text=Habari%20Legobert,%20Nina%20hitaji%20huduma%20yako" 
+       class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-text">Chat on WhatsApp</span>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Online Services by Legobert</h3>
+                    <p>Professional Document Processing | Cybersecurity Expertise | 5+ Years Experience</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fab fa-whatsapp"></i> +255 695 695 952</p>
+                    <p><i class="fas fa-envelope"></i> ligobertkishiwa003@gmail.com</p>
+                    <p><i class="fas fa-user"></i> Professional Document Specialist</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8AM-6PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Online Services. All rights reserved.</p>
+                <p class="developer">Developed by Legobert</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenu.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            
+            const spans = mobileMenu.querySelectorAll('span');
+            if (mainNav.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Set active nav link
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentPage = window.location.pathname.split('/').pop() || 'contact.html';
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+
+        // File upload functionality
+        const fileInput = document.getElementById('uploadFile');
+        const fileNameDisplay = document.getElementById('fileName');
+        
+        fileInput.addEventListener('change', function(e) {
+            if (this.files.length > 0) {
+                const fileName = this.files[0].name;
+                fileNameDisplay.textContent = `Selected file: ${fileName}`;
+                fileNameDisplay.classList.add('show');
+            } else {
+                fileNameDisplay.classList.remove('show');
+            }
+        });
+
+        // Auto-format phone number
+        document.getElementById('phoneNumber').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            
+            if (value.length > 0) {
+                if (value.startsWith('0')) {
+                    value = '255' + value.substring(1);
+                } else if (value.startsWith('255')) {
+                    // Already formatted
+                } else {
+                    value = '255' + value;
+                }
+                
+                // Format as +255 XXX XXX XXX
+                if (value.length > 3) {
+                    value = '+' + value.substring(0, 3) + ' ' + value.substring(3);
+                }
+                if (value.length > 7) {
+                    value = value.substring(0, 7) + ' ' + value.substring(7);
+                }
+                if (value.length > 11) {
+                    value = value.substring(0, 11) + ' ' + value.substring(11);
+                }
+            }
+            
+            e.target.value = value;
+        });
+
+        // Contact Form Submission
+        document.getElementById('serviceRequestForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            const whatsappLink = document.getElementById('whatsappLink');
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing Message...';
+            
+            // Get form values
+            const fullName = document.getElementById('fullName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const email = document.getElementById('email').value || 'Not provided';
+            const serviceType = document.getElementById('serviceType').value;
+            const message = document.getElementById('message').value;
+            
+            // Get file info if uploaded
+            const fileInput = document.getElementById('uploadFile');
+            const fileInfo = fileInput.files.length > 0 ? 
+                `File Attached: ${fileInput.files[0].name}` : 
+                'No files attached';
+            
+            // Create WhatsApp message
+            const whatsappMessage = `*NEW SERVICE REQUEST*%0A%0A` +
+                                   `*Name:* ${fullName}%0A` +
+                                   `*Phone:* ${phoneNumber}%0A` +
+                                   `*Email:* ${email}%0A` +
+                                   `*Service Needed:* ${serviceType}%0A` +
+                                   `*Documents:* ${fileInfo}%0A%0A` +
+                                   `*Message:*%0A${message}%0A%0A` +
+                                   `*Sent from Website Contact Form*`;
+            
+            // Create WhatsApp URL
+            const whatsappURL = `https://wa.me/255695695952?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            // Update WhatsApp link
+            whatsappLink.href = whatsappURL;
+            
+            // Show success message after short delay
+            setTimeout(() => {
+                successMessage.classList.add('show');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Reset submit button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Send via WhatsApp';
+            }, 1000);
+        });
+
+        // Close success message
+        document.getElementById('closeSuccess').addEventListener('click', function() {
+            const successMessage = document.getElementById('successMessage');
+            const form = document.getElementById('serviceRequestForm');
+            
+            successMessage.classList.remove('show');
+            form.reset();
+            fileNameDisplay.classList.remove('show');
+            
+            // Scroll to top of form
+            document.querySelector('.contact-form-container').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        });
+
+        // Validate form on input
+        const form = document.getElementById('serviceRequestForm');
+        const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+        
+        inputs.forEach(input => {
+            input.addEventListener('input', function() {
+                if (this.checkValidity()) {
+                    this.style.borderColor = '#2b6cb0';
+                } else {
+                    this.style.borderColor = '#e53e3e';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
